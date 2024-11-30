@@ -1,3 +1,4 @@
+import { UnifrakturCook } from "next/font/google";
 import type { Config } from "tailwindcss";
 
 export default {
@@ -12,7 +13,12 @@ export default {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      fontFamily: {
+        syneMono: ['var(--font-syne-mono)', 'monospace'],
+        unifrakturCook: ['var(--font-unifrakturcook)', 'cursive'],
+      },
     },
   },
   plugins: [],
 } satisfies Config;
+

@@ -1,6 +1,29 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import "./globals.css";
+import { Inter, Syne_Mono, Lora, UnifrakturCook } from 'next/font/google';
+
+const inter = Inter({
+  subsets: ['latin'],
+  variable: '--font-inter', // Define a variable for the font
+});
+
+const syneMono = Syne_Mono({
+  subsets: ['latin'],
+  variable: '--font-syne-mono', // Define a variable for the font
+  weight: ['400'], // Include specific weights
+});
+
+const unifrakturCook = UnifrakturCook({
+  subsets: ['latin'],
+  variable: '--font-unifrakturcook', // Define a variable for the font
+  weight: ['700']
+});
+
+const lora = Lora({
+  subsets: ['latin'],
+  variable: '--font-lora', // Define a variable for the font
+});
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -26,7 +49,8 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${inter.variable} ${syneMono.variable} ${unifrakturCook.variable} ${lora.variable} ${geistSans.variable} ${geistMono.variable} antialiased bg-gray-900`}
+
       >
         {children}
       </body>
